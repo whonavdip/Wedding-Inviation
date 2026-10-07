@@ -37,17 +37,17 @@ function updateScrollEffects() {
       progress < 0.4
         ? 0.82 + (progress / 0.4) * 0.46
         : 1.28 - ((progress - 0.4) / 0.6) * 0.56;
-    const heartScale =
+    const sparkleScale =
       progress < 0.4
         ? 0.72 + (progress / 0.4) * 0.88
         : 1.6 - ((progress - 0.4) / 0.6) * 0.88;
     const fadeToNext = Math.max(0, Math.min(1, (progress - 0.62) / 0.28));
-    const heartGlow = Math.max(0, 1 - Math.abs(progress - 0.4) / 0.4) * (1 - fadeToNext);
+    const sparkleGlow = Math.max(0, 1 - Math.abs(progress - 0.4) / 0.4) * (1 - fadeToNext);
 
     calendarScene.style.setProperty("--calendar-scale", calendarScale.toFixed(3));
-    calendarScene.style.setProperty("--heart-scale", heartScale.toFixed(3));
-    calendarScene.style.setProperty("--heart-glow", heartGlow.toFixed(3));
-    calendarScene.style.setProperty("--heart-opacity", (1 - fadeToNext).toFixed(3));
+    calendarScene.style.setProperty("--sparkle-scale", sparkleScale.toFixed(3));
+    calendarScene.style.setProperty("--sparkle-glow", sparkleGlow.toFixed(3));
+    calendarScene.style.setProperty("--sparkle-opacity", (1 - fadeToNext).toFixed(3));
     calendarScene.style.setProperty("--calendar-opacity", (1 - fadeToNext).toFixed(3));
     calendarScene.style.setProperty("--next-opacity", fadeToNext.toFixed(3));
     calendarScene.style.setProperty("--next-scale", (0.94 + fadeToNext * 0.06).toFixed(3));
